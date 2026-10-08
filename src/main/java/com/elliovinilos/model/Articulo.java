@@ -2,6 +2,7 @@ package com.elliovinilos.model;
 
 public class Articulo {
 
+	// Algunos parámetros extra que añadí para el proyecto final.
 	private int codigo;
 	
 	private String nombre;

@@ -16,7 +16,9 @@ public class ArticuloService {
                 System.out.print(mensaje);
                 return Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Error: debe ingresar un número entero válido.");
+            	System.out.println("\n");
+                System.out.println("Error: debe ingresar un número entero válido!\n");
+                System.out.println("\n");
             }
         }
     }
@@ -42,13 +44,17 @@ public class ArticuloService {
                 double valor = Double.parseDouble(scanner.nextLine());
 
                 if (valor < 0) {
-                    System.out.println("Error: el precio no puede ser negativo.");
+                	System.out.println("\n");
+                    System.out.println("Error: el precio no puede ser negativo!\n");
+                    System.out.println("\n");
                     continue;
                 }
 
                 return valor;
             } catch (NumberFormatException e) {
-                System.out.println("Error: debe ingresar un número decimal válido.");
+            	System.out.println("\n");
+                System.out.println("Error: debe ingresar un número decimal válido!\n");
+                System.out.println("\n");
             }
         }
     }
@@ -63,8 +69,9 @@ public class ArticuloService {
             if (!texto.trim().isEmpty()) {
                 return texto.trim();
             }
-
-            System.out.println("Error: el texto no puede estar vacío.");
+            System.out.println("\n");
+            System.out.println("Error: el texto no puede estar vacío!");
+            System.out.println("\n");
         }
     }
 	
@@ -73,12 +80,15 @@ public class ArticuloService {
 	
 	public static void ingresarArticulo(Scanner scanner, ArrayList<Articulo> articulos) {
 
-        System.out.println("\n--- INGRESAR ARTÍCULO ---");
+        System.out.println("\n---  INGRESAR ARTÍCULO  ---");
+        System.out.println("\n");
 
         int codigo = leerEntero(scanner, "Ingrese el código del artículo: ");
 
         if (buscarArticuloPorCodigo(articulos, codigo) != null) {
-            System.out.println("Error: ya existe un artículo con ese código.");
+        	System.out.println("\n");
+            System.out.println("Error: ya existe un artículo con ese código!");
+            System.out.println("\n");
             return;
         }
 
@@ -89,31 +99,41 @@ public class ArticuloService {
 
         articulos.add(articulo);
 
-        System.out.println("Artículo ingresado correctamente.");
+        System.out.println("\n");
+        System.out.println("Artículo ingresado correctamente!");
+        System.out.println("\n");
     }
 	
 	
 	public static void listarArticulos(ArrayList<Articulo> articulos) {
 
-        System.out.println("\n--- LISTADO DE ARTÍCULOS ---");
+		System.out.println("\n");
+		System.out.println("\n");
+        System.out.println("\n---  LISTADO DE ARTÍCULOS  ---");
+        System.out.println("\n");
 
         if (articulos.isEmpty()) {
+        	System.out.println("\n");
             System.out.println("No hay artículos cargados.");
+            System.out.println("\n");
             return;
         }
 
         for (Articulo articulo : articulos) {
             System.out.println(articulo);
+            System.out.println("\n");
         }
     }
 	
 	
 	public static void consultarArticulo(Scanner scanner, ArrayList<Articulo> articulos) {
 
-        System.out.println("\n--- CONSULTAR ARTÍCULO ---");
+        System.out.println("\n---  CONSULTAR ARTÍCULO  ---");
+        System.out.println("\n");
 
         if (articulos.isEmpty()) {
             System.out.println("No hay artículos cargados.");
+            System.out.println("\n");
             return;
         }
 
@@ -122,20 +142,27 @@ public class ArticuloService {
         Articulo articulo = buscarArticuloPorCodigo(articulos, codigo);
 
         if (articulo == null) {
+        	System.out.println("\n");
             System.out.println("El artículo no existe.");
+            System.out.println("\n");
         } else {
-            System.out.println("Artículo encontrado:");
+        	System.out.println("\n");
+            System.out.println("Artículo encontrado: ");
             System.out.println(articulo);
+            System.out.println("\n");
         }
     }
 	
 	
 	public static void modificarArticulo(Scanner scanner, ArrayList<Articulo> articulos) {
 
-        System.out.println("\n--- MODIFICAR ARTÍCULO ---");
+        System.out.println("\n---  MODIFICAR ARTÍCULO  ---");
+        System.out.println("\n");
 
         if (articulos.isEmpty()) {
+        	System.out.println("\n");
             System.out.println("No hay artículos cargados.");
+            System.out.println("\n");
             return;
         }
 
@@ -144,7 +171,9 @@ public class ArticuloService {
         Articulo articulo = buscarArticuloPorCodigo(articulos, codigo);
 
         if (articulo == null) {
+        	System.out.println("\n");
             System.out.println("El artículo no existe.");
+            System.out.println("\n");
             return;
         }
 
@@ -153,17 +182,21 @@ public class ArticuloService {
 
         articulo.setNombre(nuevoNombre);
         articulo.setPrecio(nuevoPrecio);
-
-        System.out.println("Artículo modificado correctamente.");
+        
+        System.out.println("\n");
+        System.out.println("Artículo modificado correctamente!");
+        System.out.println("\n");
     }
 	
 	
 	public static void eliminarArticulo(Scanner scanner, ArrayList<Articulo> articulos) {
 
-        System.out.println("\n--- ELIMINAR ARTÍCULO ---");
+        System.out.println("\n---  ELIMINAR ARTÍCULO  ---");
 
         if (articulos.isEmpty()) {
+        	System.out.println("\n");
             System.out.println("No hay artículos cargados.");
+            System.out.println("\n");
             return;
         }
 
@@ -172,13 +205,17 @@ public class ArticuloService {
         Articulo articulo = buscarArticuloPorCodigo(articulos, codigo);
 
         if (articulo == null) {
+        	System.out.println("\n");
             System.out.println("El artículo no existe.");
+            System.out.println("\n");
             return;
         }
 
         articulos.remove(articulo);
 
-        System.out.println("Artículo eliminado correctamente.");
+        System.out.println("\n");
+        System.out.println("Artículo eliminado correctamente!");
+        System.out.println("\n");
     }
 
 }

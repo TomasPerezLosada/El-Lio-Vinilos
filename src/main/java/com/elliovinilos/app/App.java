@@ -1,4 +1,4 @@
-package com.elliovinilos;
+package com.elliovinilos.app;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -18,14 +18,16 @@ public class App extends ArticuloService {
 		
         do {
             System.out.println("\n==========================================");
-            System.out.println("   SISTEMA DE ARTÍCULOS - CLASE 2 (POO)");
+            System.out.println("   El Lío Vinilos - Almacén Virtual  ");
             System.out.println("==========================================");
-            System.out.println("1 - Ingresar artículo");
-            System.out.println("2 - Listar artículos");
+            System.out.println("\n");
+            System.out.println("1 - Ingresar un artículo");
+            System.out.println("2 - Listar todos los artículos");
             System.out.println("3 - Consultar un artículo");
             System.out.println("4 - Modificar un artículo");
             System.out.println("5 - Eliminar un artículo");
             System.out.println("0 - Salir");
+            System.out.println("\n");
             System.out.println("==========================================");
 
             opcion = leerEntero(scanner, "Ingrese una opción: ");
